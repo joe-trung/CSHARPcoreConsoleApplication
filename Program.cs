@@ -270,10 +270,32 @@ using System.Text;
 
 
 
-CalculateDelegate c1 = new CalculateDelegate(DelegateExample.addition);
-CalculateDelegate c2 = new CalculateDelegate(DelegateExample.multiplication);
+//CalculateDelegate c1 = new CalculateDelegate(DelegateExample.addition);
+//CalculateDelegate c2 = new CalculateDelegate(DelegateExample.multiplication);
 
-c1(100);
-Console.WriteLine(DelegateExample.getNumber());
-c2(200);
-Console.WriteLine(DelegateExample.getNumber());
+//c1(100);
+//Console.WriteLine(DelegateExample.getNumber());
+//c2(200);
+//Console.WriteLine(DelegateExample.getNumber());
+
+
+//CalculateDelegate c1 = new CalculateDelegate(DelegateExample.addition);
+//c1(100);
+//Console.WriteLine(DelegateExample.getNumber());
+//c1 += new CalculateDelegate(DelegateExample.addition);
+//c1 += new CalculateDelegate(DelegateExample.multiplication);
+
+//c1(100);
+//Console.WriteLine(DelegateExample.getNumber());
+
+
+
+EventExample eventExample = new EventExample();
+eventExample.event_OddNumber += new EventExample.delegate_OddNumber(EventMessage);
+eventExample.addition();
+Console.ReadLine();
+
+static void EventMessage()
+{
+    Console.WriteLine("Event Executed : Odd Number");
+}
