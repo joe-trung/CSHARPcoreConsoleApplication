@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace coreConsoleApplication
 {
+    //publisher model
     internal class EventExample
     {
         //declare delegate
